@@ -33,7 +33,7 @@ public class ViewUI extends VBox implements MainView {
         addValueChangeListeners();
         addBindings();
 
-        presenter = new MainPresenter();
+        presenter = new MainPresenter(this);
     }
 
     @Override
@@ -45,11 +45,7 @@ public class ViewUI extends VBox implements MainView {
 
         TableColumn<Result, String> nameColumn = new TableColumn<>("Gemeinde");
         tableView.getColumns().add(nameColumn);
-        // TODO: nameColumn.setCellValueFactory(...)
-        
-        // TODO: define all other columns and their cell value factories
-        
-        // TODO: set label text (number of communities)
+
     }
 
     private void initializeControls() {

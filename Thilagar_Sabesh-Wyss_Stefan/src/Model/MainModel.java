@@ -12,11 +12,11 @@ import java.util.List;
 public class MainModel {
 
     /**
-     * @param args the command line arguments
+     * @return 
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+//    public static void main(String[] args) {
+//        // TODO code application logic here
+//    }
 
     public List<Result> getData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
