@@ -25,8 +25,6 @@ public class FileBackend implements MainModel {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-
-
     public List<Film> getData(String path) {
         try {
             return getData(new FileInputStream(path));
@@ -40,7 +38,14 @@ public class FileBackend implements MainModel {
         data = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(inputSream))) {
-            // TODO: 
+//            bufferedReader.lines().skip(1).forEach((String e) -> {
+//                String[] tokens = e.split("\t");
+//                data.add(new Film(
+//                        tokens[1],
+//                        tokens[2],
+//                        Integer.parseInt(tokens[20]),
+//                        Integer.parseInt(tokens[21])));
+//            });
         } catch (IOException exception) {
             // TODO: crash and burn
         }
