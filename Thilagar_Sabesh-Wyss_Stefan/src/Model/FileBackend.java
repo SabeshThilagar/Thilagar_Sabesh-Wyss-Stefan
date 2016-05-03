@@ -1,3 +1,4 @@
+
 /*
 $FHNW
  */
@@ -19,6 +20,10 @@ import java.util.List;
 public class FileBackend implements MainModel {
 
     private List<Film> data;
+
+    public FileBackend() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 

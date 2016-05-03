@@ -1,6 +1,6 @@
+
 package View;
 
-import Presenter.*;
 import Model.Film;
 import java.util.List;
 import javafx.collections.FXCollections;
@@ -8,7 +8,6 @@ import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 /*
@@ -69,3 +68,4 @@ public class ViewUI extends VBox implements MainView {
     private void addBindings() {
     }
 }
+
