@@ -2,6 +2,8 @@
 $FHNW
  */
 package Presenter;
+import View.*;
+
 
 /**
  *
@@ -22,5 +24,9 @@ public class MainPresenter {
 
 //        applicationModel = new FileBackendModel();
 //        this.applicationView.setResults(applicationModel.getData());
+    }
+
+    public MainPresenter() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
