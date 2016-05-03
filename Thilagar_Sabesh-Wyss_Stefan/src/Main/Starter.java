@@ -1,8 +1,5 @@
 package Main;
 
-
-
-
 import View.ViewUI;
 import javafx.application.Application;
 import javafx.scene.Parent;
