@@ -1,4 +1,5 @@
 package View;
+
 import Presenter.*;
 import Model.Film;
 import java.util.List;
@@ -39,7 +40,7 @@ public class ViewUI extends VBox implements MainView {
     @Override
     public void setResults(List<Film> results) {
         ObservableList<Film> observableList
-                = FXCollections.observableArrayList();
+                             = FXCollections.observableArrayList();
         observableList.addAll(results);
         tableView.setItems(observableList);
 
@@ -49,7 +50,7 @@ public class ViewUI extends VBox implements MainView {
     }
 
     private void initializeControls() {
-       //tableView = new TableView<>();
+        //tableView = new TableView<>();
         label = new Label();
     }
 
@@ -68,4 +69,3 @@ public class ViewUI extends VBox implements MainView {
     private void addBindings() {
     }
 }
-
