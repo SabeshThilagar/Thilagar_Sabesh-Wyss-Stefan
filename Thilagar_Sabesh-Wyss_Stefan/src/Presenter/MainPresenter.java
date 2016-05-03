@@ -23,7 +23,7 @@ public class MainPresenter {
     public MainPresenter(MainView applicationView) {
         this.applicationView = applicationView;
 
-        applicationModel = new FileBackendModel();
+        applicationModel = new FileBackend();
         this.applicationView.setResults(applicationModel.getData());
     }
 

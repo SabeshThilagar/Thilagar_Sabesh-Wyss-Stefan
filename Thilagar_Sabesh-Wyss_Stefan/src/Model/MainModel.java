@@ -18,7 +18,7 @@ public class MainModel {
 //        // TODO code application logic here
 //    }
 
-    public List<Result> getData() {
+    public List<Film> getData() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

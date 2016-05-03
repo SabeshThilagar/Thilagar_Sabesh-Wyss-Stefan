@@ -1,6 +1,6 @@
 package View;
 import Presenter.*;
-import Model.Result;
+import Model.Film;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,7 +20,7 @@ $FHNW
 public class ViewUI extends VBox implements MainView {
 
     //private final  MainPresenter presenter;
-    private TableView<Result> tableView;
+    private TableView<Film> tableView;
     private Label label;
 
     /**
@@ -37,13 +37,13 @@ public class ViewUI extends VBox implements MainView {
     }
 
     @Override
-    public void setResults(List<Result> results) {
-        ObservableList<Result> observableList
+    public void setResults(List<Film> results) {
+        ObservableList<Film> observableList
                 = FXCollections.observableArrayList();
         observableList.addAll(results);
         tableView.setItems(observableList);
 
-        TableColumn<Result, String> nameColumn = new TableColumn<>("Gemeinde");
+        TableColumn<Film, String> nameColumn = new TableColumn<>("Gemeinde");
         tableView.getColumns().add(nameColumn);
 
     }
