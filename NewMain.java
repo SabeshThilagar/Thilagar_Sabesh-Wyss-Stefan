@@ -1,7 +1,7 @@
 /*
 $FHNW
  */
-package Model;
+package View;
 
 /**
  *
