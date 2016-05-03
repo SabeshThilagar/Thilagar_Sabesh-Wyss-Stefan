@@ -7,7 +7,7 @@ package View;
  *
  * @author Stefan
  */
-public class NewMain {
+public class Mainview {
 
     /**
      * @param args the command line arguments

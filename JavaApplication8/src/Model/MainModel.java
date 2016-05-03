@@ -1,13 +1,13 @@
 /*
 $FHNW
  */
-package View;
+package Model;
 
 /**
  *
  * @author Stefan
  */
-public class NewMain {
+public class MainModel {
 
     /**
      * @param args the command line arguments
