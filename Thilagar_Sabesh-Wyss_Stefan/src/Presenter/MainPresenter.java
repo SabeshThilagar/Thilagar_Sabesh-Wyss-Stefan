@@ -9,11 +9,18 @@ package Presenter;
  */
 public class MainPresenter {
 
+    private final ApplicationView applicationView;
+//    private final ApplicationModel applicationModel;
+
     /**
-     * @param args the command line arguments
+     * creates a new PresentationModel
+     *
+     * @param applicationView the ApplicationView
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public MainPresenter(ApplicationView applicationView) {
+        this.applicationView = applicationView;
+
+//        applicationModel = new FileBackendModel();
+//        this.applicationView.setResults(applicationModel.getData());
     }
-    
 }
