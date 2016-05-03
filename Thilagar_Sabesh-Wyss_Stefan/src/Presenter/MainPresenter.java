@@ -2,8 +2,9 @@
 $FHNW
  */
 package Presenter;
-import View.*;
 
+import View.*;
+import Model.*;
 
 /**
  *
@@ -11,19 +12,19 @@ import View.*;
  */
 public class MainPresenter {
 
-    private final ApplicationView applicationView;
-//    private final ApplicationModel applicationModel;
+    private final MainView applicationView;
+    private final MainModel applicationModel;
 
     /**
      * creates a new PresentationModel
      *
-     * @param applicationView the ApplicationView
+     * @param applicationView the MainView
      */
-    public MainPresenter(ApplicationView applicationView) {
+    public MainPresenter(MainView applicationView) {
         this.applicationView = applicationView;
 
-//        applicationModel = new FileBackendModel();
-//        this.applicationView.setResults(applicationModel.getData());
+        applicationModel = new FileBackendModel();
+        this.applicationView.setResults(applicationModel.getData());
     }
 
     public MainPresenter() {

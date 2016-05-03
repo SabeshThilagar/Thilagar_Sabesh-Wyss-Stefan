@@ -12,6 +12,6 @@ $FHNW
  *
  * @author Stefan
  */
-public interface ApplicationView {
+public interface MainView {
     public void setResults(List<Result> results);
 }

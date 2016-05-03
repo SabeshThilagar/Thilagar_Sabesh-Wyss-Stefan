@@ -17,7 +17,7 @@ $FHNW
  *
  * @author Stefan
  */
-public class ApplicationUI extends VBox implements ApplicationView {
+public class ViewUI extends VBox implements MainView {
 
     private final  MainPresenter presenter;
     private TableView<Result> tableView;
@@ -26,7 +26,7 @@ public class ApplicationUI extends VBox implements ApplicationView {
     /**
      * creates a new ApplicationUI
      */
-    public ApplicationUI() {
+    public ViewUI() {
         initializeControls();
         layoutControls();
         addEventHandlers();
