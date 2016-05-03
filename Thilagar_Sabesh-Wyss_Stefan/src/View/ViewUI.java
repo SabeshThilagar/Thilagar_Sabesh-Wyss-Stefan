@@ -19,7 +19,7 @@ $FHNW
  */
 public class ViewUI extends VBox implements MainView {
 
-    private final  MainPresenter presenter;
+    //private final  MainPresenter presenter;
     private TableView<Result> tableView;
     private Label label;
 
@@ -33,7 +33,7 @@ public class ViewUI extends VBox implements MainView {
         addValueChangeListeners();
         addBindings();
 
-        presenter = new MainPresenter(this);
+        //presenter = new MainPresenter(this);
     }
 
     @Override
@@ -49,13 +49,13 @@ public class ViewUI extends VBox implements MainView {
     }
 
     private void initializeControls() {
-        tableView = new TableView<>();
+       //tableView = new TableView<>();
         label = new Label();
     }
 
     private void layoutControls() {
-        getChildren().add(tableView);
-        VBox.setVgrow(tableView, Priority.ALWAYS);
+//        getChildren().add(tableView);
+//        VBox.setVgrow(tableView, Priority.ALWAYS);
         getChildren().add(label);
     }
 
