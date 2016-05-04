@@ -1,4 +1,3 @@
-
 /*
 $FHNW
  */
@@ -23,8 +22,7 @@ public class FileBackend implements MainModel {
 
     @Override
     public List<Film> getData() {
-        return getData(getClass().getResourceAsStream(
-                "movies.csv"));
+        return getData(getClass().getResourceAsStream("movies.csv"));
     }
 
     /**
@@ -52,14 +50,12 @@ public class FileBackend implements MainModel {
         data = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(inputSream))) {
-            // TODO: 
-        } catch (IOException exception) {
-            // TODO: crash and burn
-        }
-        return data;
-    }
-}
- //               data.add(new Film(
+ 
+//        try (BufferedReader bufferedReader = new BufferedReader(
+//                new InputStreamReader(inputSream))) {
+//            bufferedReader.lines().skip(1).forEach(e -> {
+//                String[] col = e.split(",");
+//               data.add(new Film(
 //                        Integer.parseInt(col[0]),
 //                        Integer.parseInt(col[1]),
 //                        col[2],
@@ -73,3 +69,10 @@ public class FileBackend implements MainModel {
 //                        col[10],
 //                        col[11],
 //                        Integer.parseInt(col[12])));
+        } catch (IOException exception) {
+            // TODO: crash and burn
+        }
+        return data;
+    }
+}
+

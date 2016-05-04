@@ -13,7 +13,7 @@ import static javafx.application.Application.launch;
 public class Starter extends Application {
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {//throws Exception {
         Parent rootPanel = new ViewUI();
         Scene scene = new Scene(rootPanel, 400, 250);
         primaryStage.setTitle("Filme");
