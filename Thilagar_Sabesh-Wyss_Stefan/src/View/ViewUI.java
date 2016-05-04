@@ -1,7 +1,7 @@
-
 package View;
 
 import Model.Film;
+import Presenter.MainPresenter;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,7 +19,7 @@ $FHNW
  */
 public class ViewUI extends VBox implements MainView {
 
-    //private final  MainPresenter presenter;
+    public  MainPresenter presenter;
     private TableView<Film> tableView;
     private Label label;
 
@@ -33,29 +33,27 @@ public class ViewUI extends VBox implements MainView {
         addValueChangeListeners();
         addBindings();
 
-        //presenter = new MainPresenter(this);
+        presenter = new MainPresenter(this);
     }
 
     @Override
-    public void setResults(List<Film> results) {
-        ObservableList<Film> observableList
-                             = FXCollections.observableArrayList();
-        observableList.addAll(results);
+    public void setFilm(List<Film> film) {
+        ObservableList<Film> observableList = FXCollections.observableArrayList();
+        observableList.addAll(film);
         tableView.setItems(observableList);
 
-        TableColumn<Film, String> nameColumn = new TableColumn<>("Gemeinde");
+        TableColumn<Film, String> nameColumn = new TableColumn<>("Film");
         tableView.getColumns().add(nameColumn);
 
     }
 
     private void initializeControls() {
-        //tableView = new TableView<>();
+        tableView = new TableView<>();
         label = new Label();
     }
 
     private void layoutControls() {
-//        getChildren().add(tableView);
-//        VBox.setVgrow(tableView, Priority.ALWAYS);
+        getChildren().add(tableView);
         getChildren().add(label);
     }
 
@@ -68,4 +66,3 @@ public class ViewUI extends VBox implements MainView {
     private void addBindings() {
     }
 }
-

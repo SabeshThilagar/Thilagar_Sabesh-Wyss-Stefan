@@ -13,5 +13,5 @@ $FHNW
  * @author Stefan
  */
 public interface MainView {
-    public void setResults(List<Film> results);
+    public void setFilm(List<Film> results);
 }

@@ -21,9 +21,9 @@ public class FileBackend implements MainModel {
 
     private List<Film> data;
 
-    public FileBackend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+//    public FileBackend() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 
     public List<Film> getData(String path) {
         try {
@@ -54,6 +54,8 @@ public class FileBackend implements MainModel {
 
     @Override
     public List<Film> getData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return getData(getClass().getResourceAsStream("movies.csv"));
     }
+
+
 }
