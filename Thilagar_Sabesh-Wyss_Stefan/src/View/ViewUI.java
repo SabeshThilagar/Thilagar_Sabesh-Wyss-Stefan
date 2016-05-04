@@ -1,3 +1,4 @@
+
 package View;
 
 import Model.Film;
@@ -79,3 +80,4 @@ public class ViewUI extends VBox implements MainView {
     private void addBindings() {
     }
 }
+
