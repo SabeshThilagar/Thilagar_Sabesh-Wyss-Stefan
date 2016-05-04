@@ -1,13 +1,14 @@
-
 package View;
 
 import Model.Film;
+import Presenter.MainPresenter;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
 /*
@@ -19,7 +20,9 @@ $FHNW
  */
 public class ViewUI extends VBox implements MainView {
 
-    //private final  MainPresenter presenter;
+
+    private final MainPresenter presenter;
+
     private TableView<Film> tableView;
     private Label label;
 
@@ -33,29 +36,37 @@ public class ViewUI extends VBox implements MainView {
         addValueChangeListeners();
         addBindings();
 
-        //presenter = new MainPresenter(this);
+        presenter = new MainPresenter(this);
     }
 
     @Override
-    public void setResults(List<Film> results) {
+    public void setFilm(List<Film> films) {
         ObservableList<Film> observableList
-                             = FXCollections.observableArrayList();
-        observableList.addAll(results);
+                = FXCollections.observableArrayList();
+        observableList.addAll(films);
+
         tableView.setItems(observableList);
 
-        TableColumn<Film, String> nameColumn = new TableColumn<>("Gemeinde");
-        tableView.getColumns().add(nameColumn);
 
+        TableColumn<Film, String> nameColumn = new TableColumn<>("Filme");
+
+        tableView.getColumns().add(nameColumn);
+        // TODO: nameColumn.setCellValueFactory(...)
+        
+        // TODO: define all other columns and their cell value factories
+        
+        // TODO: set label text (number of communities)
     }
 
     private void initializeControls() {
-        //tableView = new TableView<>();
+        tableView = new TableView<>();
         label = new Label();
     }
 
     private void layoutControls() {
-//        getChildren().add(tableView);
-//        VBox.setVgrow(tableView, Priority.ALWAYS);
+        getChildren().add(tableView);
+
+        VBox.setVgrow(tableView, Priority.ALWAYS);
         getChildren().add(label);
     }
 
@@ -68,4 +79,3 @@ public class ViewUI extends VBox implements MainView {
     private void addBindings() {
     }
 }
-

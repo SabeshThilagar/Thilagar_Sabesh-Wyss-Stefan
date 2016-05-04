@@ -21,10 +21,18 @@ public class FileBackend implements MainModel {
 
     private List<Film> data;
 
-    public FileBackend() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public List<Film> getData() {
+        return getData(getClass().getResourceAsStream(
+                "movies.csv"));
     }
 
+    /**
+     * returns the data from a given file
+     *
+     * @param path the name of the given file
+     * @return the election results
+     */
     public List<Film> getData(String path) {
         try {
             return getData(new FileInputStream(path));
@@ -34,26 +42,34 @@ public class FileBackend implements MainModel {
         return null;
     }
 
+    /**
+     * returns the data from a given InputStream
+     *
+     * @param inputSream the InputStream to read from
+     * @return the election results
+     */
     public List<Film> getData(InputStream inputSream) {
         data = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(inputSream))) {
-//            bufferedReader.lines().skip(1).forEach((String e) -> {
-//                String[] tokens = e.split("\t");
-//                data.add(new Film(
-//                        tokens[1],
-//                        tokens[2],
-//                        Integer.parseInt(tokens[20]),
-//                        Integer.parseInt(tokens[21])));
-//            });
+            // TODO: 
         } catch (IOException exception) {
             // TODO: crash and burn
         }
         return data;
     }
-
-    @Override
-    public List<Film> getData() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
+ //               data.add(new Film(
+//                        Integer.parseInt(col[0]),
+//                        Integer.parseInt(col[1]),
+//                        col[2],
+//                        col[3],
+//                        col[4],
+//                        col[5],
+//                        Integer.parseInt(col[6]),
+//                        col[7],
+//                        Integer.parseInt(col[8]),
+//                        Integer.parseInt(col[9]),
+//                        col[10],
+//                        col[11],
+//                        Integer.parseInt(col[12])));

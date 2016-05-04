@@ -5,10 +5,13 @@ package Model;
 
 import java.util.List;
 
-/**
- * the model of the application
- */
-public interface MainModel  {
+public interface MainModel {
+
+    /**
+     * returns the application data
+     *
+     * @return the application data
+     */
     public List<Film> getData();
 }
 

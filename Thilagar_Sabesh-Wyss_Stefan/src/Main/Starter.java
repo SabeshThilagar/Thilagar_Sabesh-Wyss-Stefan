@@ -1,4 +1,3 @@
-
 package Main;
 
 import View.ViewUI;
@@ -11,13 +10,13 @@ import static javafx.application.Application.launch;
 /**
  * the application starter
  */
-public class Starter   extends Application {
+public class Starter extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent rootPanel = new ViewUI();
         Scene scene = new Scene(rootPanel, 400, 250);
-        primaryStage.setTitle("test");
+        primaryStage.setTitle("Filme");
         primaryStage.setScene(scene);
         primaryStage.show();
     }
@@ -32,4 +31,3 @@ public class Starter   extends Application {
         launch(args);
     }
 }
-
