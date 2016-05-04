@@ -1,4 +1,3 @@
-/*
 $FHNW
  */
 package Model;
@@ -69,10 +68,12 @@ public class FileBackend implements MainModel {
 //                        col[10],
 //                        col[11],
 //                        Integer.parseInt(col[12])));
+
         } catch (IOException exception) {
             // TODO: crash and burn
         }
         return data;
     }
 }
+
 
