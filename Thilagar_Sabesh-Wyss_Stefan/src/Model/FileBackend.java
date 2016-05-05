@@ -20,7 +20,7 @@ public class FileBackend implements MainModel {
     @Override
     public List<Film> getData() {
         //return getData(getClass().getResourceAsStream("movies.csv"));
-        return getData(getClass().getResourceAsStream("movies.txt"));
+        return getData(getClass().getResourceAsStream("movies_1.txt"));
     }
 
     /**
@@ -49,7 +49,7 @@ public class FileBackend implements MainModel {
         try (BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(inputSream))) {
             bufferedReader.lines().skip(1).forEach(e -> {
-                String[] col = e.split("\t");
+                String[] col = e.split(";");
                 data.add(new Film(
                         Integer.parseInt(col[0]), //ID
                         col[1], //TITLE
@@ -65,10 +65,16 @@ public class FileBackend implements MainModel {
                         col[11], //STARTDate
                         Integer.parseInt(col[12]))); //NUMBERofOSKARS
             });
+//TEST
+            data.stream().forEach((f) -> {
+                System.out.println(f.getTitle());
+            });
+//TEST
 
         } catch (IOException exception) {
             // TODO: crash and burn
         }
         return data;
+
     }
 }
