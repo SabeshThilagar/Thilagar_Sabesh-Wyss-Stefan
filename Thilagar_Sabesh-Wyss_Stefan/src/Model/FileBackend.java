@@ -1,5 +1,3 @@
-$FHNW
- */
 package Model;
 
 import java.io.BufferedReader;
