@@ -1,5 +1,3 @@
-$FHNW
- */
 package Model;
 
 import java.io.BufferedReader;
@@ -21,7 +19,8 @@ public class FileBackend implements MainModel {
 
     @Override
     public List<Film> getData() {
-        return getData(getClass().getResourceAsStream("movies.csv"));
+        //return getData(getClass().getResourceAsStream("movies.csv"));
+        return getData(getClass().getResourceAsStream("movies.txt"));
     }
 
     /**
@@ -49,25 +48,23 @@ public class FileBackend implements MainModel {
         data = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(inputSream))) {
- 
-//        try (BufferedReader bufferedReader = new BufferedReader(
-//                new InputStreamReader(inputSream))) {
-//            bufferedReader.lines().skip(1).forEach(e -> {
-//                String[] col = e.split(",");
-//               data.add(new Film(
-//                        Integer.parseInt(col[0]),
-//                        Integer.parseInt(col[1]),
-//                        col[2],
-//                        col[3],
-//                        col[4],
-//                        col[5],
-//                        Integer.parseInt(col[6]),
-//                        col[7],
-//                        Integer.parseInt(col[8]),
-//                        Integer.parseInt(col[9]),
-//                        col[10],
-//                        col[11],
-//                        Integer.parseInt(col[12])));
+            bufferedReader.lines().skip(1).forEach(e -> {
+                String[] col = e.split("\t");
+                data.add(new Film(
+                        Integer.parseInt(col[0]), //ID
+                        col[1], //TITLE
+                        Integer.parseInt(col[2]), //YEARofAWARD
+                        col[3], //DIRECTOR
+                        col[4], //MAINACTOR
+                        col[5], //TITLEeng
+                        Integer.parseInt(col[6]), //YEARofPRODUCTION
+                        col[7], //COUNTRY
+                        Integer.parseInt(col[8]), //DURATION
+                        Integer.parseInt(col[9]), //FSK
+                        col[10], //GENRE
+                        col[11], //STARTDate
+                        Integer.parseInt(col[12]))); //NUMBERofOSKARS
+            });
 
         } catch (IOException exception) {
             // TODO: crash and burn
@@ -75,5 +72,3 @@ public class FileBackend implements MainModel {
         return data;
     }
 }
-
-
