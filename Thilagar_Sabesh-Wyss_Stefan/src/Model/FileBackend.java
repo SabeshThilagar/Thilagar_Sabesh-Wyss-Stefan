@@ -16,34 +16,30 @@ import java.util.List;
 public class FileBackend implements MainModel {
 
     private List<Film> data;
+    private String fileName = "movies_1.txt";
 
     @Override
     public List<Film> getData() {
         //return getData(getClass().getResourceAsStream("movies.csv"));
-        return getData(getClass().getResourceAsStream("movies_1.txt"));
+        //return getData(getClass().getResourceAsStream("movies_1.txt"));
+        return getData(getClass().getResourceAsStream(fileName));
     }
 
-    /**
-     * returns the data from a given file
-     *
-     * @param path the name of the given file
-     * @return the election results
-     */
+    @Override
+    public void setFileName(String name) {
+        this.fileName = name;
+    }
+
     public List<Film> getData(String path) {
         try {
             return getData(new FileInputStream(path));
-        } catch (FileNotFoundException ex) {
-            // TODO
+        } catch (FileNotFoundException exception) {
+            System.out.println("keine Datei");
+            System.out.println("File not found: " + exception.getMessage());
         }
         return null;
     }
 
-    /**
-     * returns the data from a given InputStream
-     *
-     * @param inputSream the InputStream to read from
-     * @return the election results
-     */
     public List<Film> getData(InputStream inputSream) {
         data = new ArrayList<>();
         try (BufferedReader bufferedReader = new BufferedReader(
@@ -72,9 +68,11 @@ public class FileBackend implements MainModel {
 //TEST
 
         } catch (IOException exception) {
-            // TODO: crash and burn
+            System.out.println("falsche Daten");
+            System.out.println("General I/O exception: " + exception.getMessage());
         }
         return data;
 
     }
+
 }
