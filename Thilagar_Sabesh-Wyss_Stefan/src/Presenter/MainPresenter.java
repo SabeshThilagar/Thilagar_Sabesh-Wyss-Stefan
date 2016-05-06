@@ -20,7 +20,7 @@ public class MainPresenter {
     public MainPresenter(ViewUI viewUI) {
         this.mView = viewUI;
         mModel =  new FileBackend();
-        mModel.setFileName("movies.txt");
+        //mModel.setFileName("movies.txt");
         this.mView.setFilm(mModel.getData());
     }
 

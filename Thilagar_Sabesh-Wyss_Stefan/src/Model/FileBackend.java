@@ -31,11 +31,14 @@ public class FileBackend implements MainModel {
         if (url != null) {
 
             if (".txt".equals(url.toString().substring(url.toString().length() - 4))) {
-                System.out.println("txt" + fileName);
+                System.out.println("txt " + fileName);
                 return getDataTXT(getClass().getResourceAsStream(fileName));
             } else if (".csv".equals(url.toString().substring(url.toString().length() - 4))) {
-                System.out.println("csv" + fileName);
-                return getDataCSV(fileName);
+                System.out.println("csv " + fileName);
+                        File fi = new File("");
+        String pfadi = fi.getAbsolutePath();
+        String csvFile = pfadi + "\\"+fileName;
+                return getDataCSV(new File(csvFile));
             } else {
                 System.out.println("kein unterstütztes File");//TEST
                 return eData;
@@ -85,7 +88,7 @@ public class FileBackend implements MainModel {
         return data;
     }
 
-    public List<Film> getDataCSV(String fn) {
+    public List<Film> getDataCSV(File fn) {
         String zeile;
         String[] split = null;
         ArrayList list = new ArrayList();
