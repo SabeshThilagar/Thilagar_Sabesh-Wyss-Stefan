@@ -13,11 +13,6 @@ $FHNW
  */
 public interface MainView {
 
-    /**
-     * sets the list of election results
-     *
-     * @param data
-     */
     public void setFilm(List<Film> data);
 
 }

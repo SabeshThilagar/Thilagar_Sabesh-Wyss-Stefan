@@ -1,6 +1,7 @@
 package Model;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -16,18 +17,19 @@ import java.util.List;
 public class FileBackend implements MainModel {
 
     private List<Film> data;
-    private String fileName = "movies_1.txt";
+    private String fileName = "movies.txt";
 
     @Override
     public List<Film> getData() {
-        //return getData(getClass().getResourceAsStream("movies.csv"));
-        //return getData(getClass().getResourceAsStream("movies_1.txt"));
         return getData(getClass().getResourceAsStream(fileName));
     }
 
     @Override
     public void setFileName(String name) {
-        this.fileName = name;
+        File file = new File(name);
+        if (file.exists()) {
+            this.fileName = name;
+        }
     }
 
     public List<Film> getData(String path) {
