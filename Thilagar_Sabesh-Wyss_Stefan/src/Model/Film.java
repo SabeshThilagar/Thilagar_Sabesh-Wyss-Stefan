@@ -16,7 +16,7 @@ public class Film {
     private final String startDate;
     private final int numberOfOscars;
 
-    public Film(int id, int yearOfAward, String title, String director, String mainActor, String titleEnglish, int yearOfProduction, String country, int duration, int fsk, String genre, String startDate, int numberOfOscars) {
+    public Film(int id, String title, int yearOfAward, String director, String mainActor, String titleEnglish, int yearOfProduction, String country, int duration, int fsk, String genre, String startDate, int numberOfOscars) {
         this.id = id;
         this.yearOfAward = yearOfAward;
         this.title = title;
